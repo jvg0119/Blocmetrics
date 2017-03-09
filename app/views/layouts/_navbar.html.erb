@@ -25,10 +25,14 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-								<li><%= link_to "Name", "#" %></li>            	
-                <li><%= link_to "Sign Out", "#" %></li>
-                <li><%= link_to "Sign Up", "#" %></li>
-                <li><%= link_to "Sign In", "#" %></li>
+                <% if current_user %>
+                    <li>Hi</li>
+                    <li><%= link_to current_user.name || current_user.email, edit_user_registration_path(current_user) %></li>           	
+                    <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                    <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                    <li><%= link_to "Sign In", new_user_session_path %></li>
+                <% end %>
             </ul>
         </div>
     </nav>

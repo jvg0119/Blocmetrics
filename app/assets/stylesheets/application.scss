@@ -17,4 +17,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.navbar-nav > li {
+    float: none;
+    display: inline-block; // puts the display inline w/ the block ex: Hi Joe!
+    margin-right: 10px; // moves the right inside the navbar
+  }
 
