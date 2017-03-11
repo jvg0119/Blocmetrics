@@ -1,0 +1,8 @@
+
+<h1><%= @registered_application.name %></h1>
+<h4><%= @registered_application.url %><h4>
+
+<%= link_to "Edit", edit_registered_application_path(@registered_application), class: "btn btn-md btn-primary" %>
+<%= link_to "Delete", registered_application_path(@registered_application), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-md btn-danger"  %>
+
+<%= link_to "All registered applications", registered_applications_path, class: "btn btn-md btn-success" %>
