@@ -43,7 +43,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'pry-rails', '~> 0.3.5'
-  gem 'faker', '~> 1.7', '>= 1.7.3'
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'shoulda', '~> 3.5'
   gem 'factory_girl_rails', '~> 4.8'
@@ -65,6 +64,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'faker', '~> 1.7', '>= 1.7.3'
 gem 'devise', '~> 4.2'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
