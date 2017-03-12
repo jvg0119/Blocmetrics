@@ -1,7 +1,7 @@
 FactoryGirl.define do 
 	factory :registered_application do 
-		name "google"
-		url "www.google.com"
+		name "My App Factory"
+		url   { "www.#{name.parameterize}.com" if name } # "www.my-app-factory.com"
 		user
 	end
 end

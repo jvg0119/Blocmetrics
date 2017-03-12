@@ -4,14 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,  :confirmable 
 
-  has_many :registered_applications
+  has_many :registered_applications, dependent: :destroy
 
   validates :name, presence: true
 
 end
-
-# t.string   "name"
-#     t.string   "email",                  default: "", null: false
-#     t.string   "encrypted_password",    
-
-

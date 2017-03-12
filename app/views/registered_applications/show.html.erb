@@ -6,3 +6,13 @@
 <%= link_to "Delete", registered_application_path(@registered_application), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-md btn-danger"  %>
 
 <%= link_to "All registered applications", registered_applications_path, class: "btn btn-md btn-success" %>
+
+<% if @events.any? %>
+	<h4><%= pluralize @events.count, "Event" %></h4>
+	<%#= @events.inspect %>
+	<%#= @events %>
+	<%#= render partial: 'event', collection: @events %>
+	<% @events.each do |key, value| %>
+		<%= key %><br/>
+	<% end %>
+<% end %>

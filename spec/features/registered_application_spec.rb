@@ -109,7 +109,8 @@ describe "Registered Application" do
 			#puts my_user.name
 		end
 		it "does not save the registered_application if it has invalid attributes" do
-			fill_in('Name', with: '')
+			#fill_in('Name', with: '')
+			fill_in('Name', with: nil )
 			fill_in('Url', with: 'New-url.com')
 			click_button("Create Registered application")
 
@@ -129,6 +130,23 @@ describe "Registered Application" do
 			#save_and_open_page
 		end
 	end 	# Deleting registered_application
+
+	describe "show view" do 
+		before do
+			my_event1 = create(:event, name: "Event 1", registered_application: my_registered_application)
+			my_event2 = create(:event, name: "Event 2", registered_application: my_registered_application)
+
+			visit registered_application_path(my_registered_application)
+			expect(current_path).to eq(registered_application_path my_registered_application)
+		end 
+		it "shows each event's count" do
+			expect(page).to have_content("#{my_registered_application.events.count} Events") 
+		end
+		it "shows the list of associated events" do
+			expect(page).to have_content(my_registered_application.events.first.name)
+			expect(page).to have_content(my_registered_application.events.second.name)
+		end
+	end 	# show view
 
 end 	# Registered Application
 
