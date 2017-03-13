@@ -3,6 +3,6 @@ class RegisteredApplication < ApplicationRecord
   has_many :events, dependent: :destroy
 
   validates :name, :url, presence: true
-  validates :name, :url, uniqueness: { case_sensitive: false }
+#  validates :name, :url#, uniqueness: { case_sensitive: false }
 
 end
