@@ -7,13 +7,25 @@
 
 <%= link_to "All registered applications", registered_applications_path, class: "btn btn-md btn-success" %>
 
+<!-- below is replace w/ the chart -->
 <% if @events.any? %>
 	<h4><%= pluralize @events.count, "Event" %></h4>
 	<%#= @events.inspect %>
 	<%#= @events %>
 	<%#= render partial: 'event', collection: @events %>
 	<% @events.each do |key, value| %>
-		<%= key %><br/>
+		<%#= key %>
+		<%#= value %>
+		<%#= pie_chart @registered_application.events.group(:name).count %>
 	<% end %>
 <% end %>
 
+
+<%= pie_chart @registered_application.events.group(:name).count %>
+<%#= column_chart Order.group_by_day_of_week(:created_at, format: "%a").count %>
+<%#= column_chart @registered_application.events.group_by(:name).count %>
+
+<%= line_chart @registered_application.events.group_by_hour(:created_at).count %>
+<%#= line_chart @registered_application.events.group_by_day(:created_at).count %>
+
+<%#= column_chart @registered_application.events.group_by_minute(:created_at).count %>

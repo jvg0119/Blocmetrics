@@ -1,3 +1,9 @@
 <h1>About Blocmetrics</h1>
 <p>Hello, my name is Joe Garcia.</p>
 <p>You are checking my bloc project app.</p>
+<br/>
+<h4 class="text-centered">Type of Sport Most Viewed by Users</h4>
+<%= pie_chart({"Football" => 15, "Basketball" => 5, "Soccer" => 8, "Baseball" => 4}) %> 
+
+<%#= line_chart @registered_application.events.group_by_day(:created_at).count %>
+<%= line_chart({ "Football" => 15, "Basketball" => 5, "Soccer" => 8, "Baseball" => 4 } ) %>

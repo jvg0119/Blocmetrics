@@ -35,3 +35,5 @@ class API::EventsController < ApplicationController
 		params.require(:event).permit(:name)
 	end
 end
+
+
